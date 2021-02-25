@@ -38,15 +38,10 @@ type DB struct {
 }
 
 // NewDB returns a new instance of DB.
-func NewDB(dsn string, authService gofman.AuthService) *DB {
+func NewDB() *DB {
 	db := &DB{
-		DSN: dsn,
-
-		ID: id,
-
+		ID:  id,
 		Now: now,
-
-		AuthService: authService,
 	}
 
 	db.ctx, db.cancel = context.WithCancel(context.Background())

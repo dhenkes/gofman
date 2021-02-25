@@ -15,6 +15,11 @@ type SetupService struct {
 	db *DB
 }
 
+// NewSetupService returns a new instance of SetupService.
+func NewSetupService(db *DB) *SetupService {
+	return &SetupService{db: db}
+}
+
 // ShouldRunSetup checks if users exist. If that is not the case it will
 // return true.
 func (s *SetupService) ShouldRunSetup(ctx context.Context) (bool, error) {
